@@ -34,7 +34,7 @@ Once a round ends you have the option to play again: [y]es or [n]o.
     JVM:          1.8.0_144 (Oracle Corporation 25.144-b01)
     OS:           Mac OS X 10.11.6 x86_64
     
-    eacaps$ ./run.sh
+    eacaps$ ./build-and-run.sh
     :compileJava UP-TO-DATE
     :processResources NO-SOURCE
     :classes UP-TO-DATE
