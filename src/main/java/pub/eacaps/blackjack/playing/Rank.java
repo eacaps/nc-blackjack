@@ -1,5 +1,8 @@
 package pub.eacaps.blackjack.playing;
 
+/**
+ * ENUM for card Rank, with a value for scoring and a String for display
+ */
 public enum Rank {
     TWO(2, "2"),
     THREE(3, "3"),

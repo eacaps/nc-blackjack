@@ -2,11 +2,17 @@ package pub.eacaps.blackjack.game;
 
 import pub.eacaps.blackjack.playing.Card;
 
+/**
+ * HouseHand hides what the house has for display
+ */
 public class HouseHand extends BlackjackHand {
     public HouseHand() {
         super();
     }
 
+    /**
+     * @return String that only shows the first card for a househand
+     */
     @Override
     public String toString() {
         String value = "{ }";
@@ -21,6 +27,9 @@ public class HouseHand extends BlackjackHand {
         return value;
     }
 
+    /**
+     * @return String of the full revealed hand
+     */
     public String toFullString() {
         return super.toString();
     }

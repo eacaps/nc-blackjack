@@ -2,6 +2,9 @@ package pub.eacaps.blackjack.playing;
 
 import java.util.ArrayList;
 
+/**
+ * A hand is a representation of a list of cards that belong to a player
+ */
 public class Hand {
     protected ArrayList<Card> cards;
 

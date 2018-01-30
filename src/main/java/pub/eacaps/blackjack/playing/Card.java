@@ -1,5 +1,8 @@
 package pub.eacaps.blackjack.playing;
 
+/**
+ * Card has a suit and a rank
+ */
 public class Card {
     private Suit suit;
     private Rank rank;

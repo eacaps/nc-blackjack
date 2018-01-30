@@ -1,5 +1,8 @@
 package pub.eacaps.blackjack.playing;
 
+/**
+ * ENUM for card Suits, of which there are 4
+ */
 public enum Suit {
     CLUBS("C"),
     SPADES("S"),
