@@ -7,7 +7,7 @@ Running this sample requires git, a recent version of java and gradle.
 
     $ git clone git@github.com:eacaps/nc-blackjack.git
     $ cd nc-blackjack
-    $ ./run.sh
+    $ ./build-and-run.sh
     
 The game will proceed in rounds.
 During each round you can [h]it or [s]tand until you bust or stand.
