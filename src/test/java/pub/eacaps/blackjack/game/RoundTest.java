@@ -33,6 +33,16 @@ public class RoundTest {
     }
 
     @Test
+    public void testContinue() {
+        BlackjackHand hand = new BlackjackHand();
+        hand.addCard(new Card(Suit.SPADES, Rank.FIVE));
+        hand.addCard(new Card(Suit.SPADES, Rank.TEN));
+        assertEquals(round.continueRoundCheck(round.evaluateHand(hand)), 0);
+        hand.addCard(new Card(Suit.SPADES, Rank.JACK));
+        assertEquals(round.continueRoundCheck(round.evaluateHand(hand)), -1);
+    }
+
+    @Test
     public void testBoringHouseHand() {
         HouseHand house_hand = new HouseHand();
         house_hand.addCard(new Card(Suit.SPADES, Rank.QUEEN));

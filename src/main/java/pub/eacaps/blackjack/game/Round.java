@@ -44,6 +44,20 @@ public class Round {
     }
 
     /**
+     * Check to see if this value means the hand is done
+     *
+     * @param value
+     * @return 0 if we can continue, -1 if busted
+     */
+    public int continueRoundCheck(BlackjackEvaluation value) {
+        int score = 0;
+        if (value.isOver()) {
+            score = -1;
+        }
+        return score;
+    }
+
+    /**
      * Handle house logic of hitting on anything lower than 17
      *
      * @param house_hand

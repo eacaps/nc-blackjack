@@ -1,12 +1,17 @@
-package pub.eacaps;
+package pub.eacaps.blackjack;
 
 import pub.eacaps.blackjack.game.*;
+import pub.eacaps.blackjack.playing.Card;
+import pub.eacaps.blackjack.playing.Rank;
 import pub.eacaps.blackjack.playing.StandardDeck;
+import pub.eacaps.blackjack.playing.Suit;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("welcome to nc-blackjack");
+        int score = 0;
         StandardDeck deck = new StandardDeck();
         Scanner scan = new Scanner(System.in);
         boolean play = true;
@@ -20,20 +25,24 @@ public class Main {
             System.out.println("you  have: " + my_hand.toString());
             System.out.println("house has: " + house_hand.toString());
             boolean over = false;
-            if (round.checkForBlackjacks(house_hand, my_hand) != 0) {
+            int blackjack_score = round.checkForBlackjacks(house_hand, my_hand);
+            if (blackjack_score != 0) {
                 over = true;
+                score += blackjack_score;
             }
             while (!over) {
                 System.out.println("what do you want to do: [h]it or [s]tand?");
                 String line = scan.nextLine();
                 if ("s".equals(line)) {
-                    round.evaluateResults(house_hand, my_hand);
+                    score += round.evaluateResults(house_hand, my_hand);
                     over = true;
                 } else if ("h".equals(line)) {
                     round.hitHand(my_hand);
                     BlackjackEvaluation my_value = round.evaluateHand(my_hand);
                     System.out.println("you  have: " + my_hand.toString());
-                    if (round.evaluateHand(my_hand).isOver()) {
+                    int hand_score = round.continueRoundCheck(my_value);
+                    if (hand_score < 0) {
+                        score += hand_score;
                         over = true;
                         System.out.println("you busted");
                     } else {
@@ -47,5 +56,7 @@ public class Main {
                 play = false;
             }
         } while (play);
+        System.out.println("your score was: " + score);
+        System.out.println("good bye.");
     }
 }
