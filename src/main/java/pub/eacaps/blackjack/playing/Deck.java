@@ -15,7 +15,7 @@ abstract public class Deck {
     }
 
     public Card dealCard() {
-        if(cards.size() <= 0) {
+        if (cards.size() <= 0) {
             this.shuffle();
         }
         return cards.remove(0);
