@@ -23,6 +23,6 @@ public class Hand {
 
     @Override
     public String toString() {
-        return "{ " + cards + " }";
+        return cards.toString();
     }
 }

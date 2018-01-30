@@ -20,6 +20,9 @@ public class Main {
             System.out.println("you  have: " + my_hand.toString());
             System.out.println("house has: " + house_hand.toString());
             boolean over = false;
+            if(round.checkForBlackjacks(house_hand, my_hand) != 0) {
+                over = true;
+            }
             while (!over) {
                 System.out.println("what do you want to do: [h]it or [s]tand?");
                 String line = scan.nextLine();

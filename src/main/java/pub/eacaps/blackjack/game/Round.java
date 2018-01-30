@@ -35,6 +35,22 @@ public class Round {
         return house_value;
     }
 
+    public int checkForBlackjacks(BlackjackHand house_hand, BlackjackHand my_hand) {
+        int score = 0;
+        BlackjackEvaluation house_value = BlackjackHandEvaluator.evaluateHand(house_hand);
+        BlackjackEvaluation my_value = BlackjackHandEvaluator.evaluateHand(my_hand);
+        if(house_value.isBlackjack() && my_value.isBlackjack()) {
+            System.out.println("blackjack tie!");
+        } else if(house_value.isBlackjack()) {
+            System.out.println("house has blackjack");
+            score = -1;
+        } else if(my_value.isBlackjack()) {
+            System.out.println("you have blackjack");
+            score = 1;
+        }
+        return score;
+    }
+
     public int evaluateResults(HouseHand house_hand, BlackjackHand my_hand) {
         int score = 0;
         BlackjackEvaluation house_value = this.processHouseHand(house_hand);
@@ -60,5 +76,6 @@ public class Round {
                 score = 0;
             }
         }
+        return score;
     }
 }
