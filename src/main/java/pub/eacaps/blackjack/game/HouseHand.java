@@ -10,9 +10,9 @@ public class HouseHand extends BlackjackHand {
     @Override
     public String toString() {
         String value = "{ }";
-        if(this.cards.size() > 0) {
+        if (this.cards.size() > 0) {
             value = "{ " + this.cards.get(0);
-            for(int x=1;x< this.cards.size();x++) {
+            for (int x = 1; x < this.cards.size(); x++) {
                 Card card = this.cards.get(x);
                 value += ",[??]";
             }

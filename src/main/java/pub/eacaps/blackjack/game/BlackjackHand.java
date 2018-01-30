@@ -14,7 +14,7 @@ public class BlackjackHand extends Hand {
     @Override
     public void addCard(Card card) {
         Rank card_rank = card.getRank();
-        if(Rank.ACE.equals(card_rank)) {
+        if (Rank.ACE.equals(card_rank)) {
             ace_count++;
         }
         super.addCard(card);
